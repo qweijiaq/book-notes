@@ -566,7 +566,7 @@ const operationObj = {
    subtract(...args) {
        let calArr = this.getParam(args)
        let corrFactor = this.correctionFactor(calArr)
-       let diﬀ = calArr.reduce((accum, curr, curIndex) => {
+       let diff = calArr.reduce((accum, curr, curIndex) => {
           // reduce() 函数在未传入初始值时，curIndex 从 1 开始，第一位参与运算的值需要
           // 乘以最大乘数因子
           if (curIndex === 1) {
@@ -576,7 +576,7 @@ const operationObj = {
           return Math.round(accum) - Math.round(curr * corrFactor)
        })
      // 除以最大乘数因子
-       return diﬀ / corrFactor;
+       return diff / corrFactor;
    },
 
    /**
